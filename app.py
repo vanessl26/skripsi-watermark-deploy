@@ -16,7 +16,7 @@ model = load_model()
 st.title("Watermark Detection App")
 
 # When the input changes, the cached model will be used
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
+uploaded_file = st.file_uploader("Choose an image...", type=["png"])
 
 # Function to preprocess image
 def preprocess_image(image):
