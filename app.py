@@ -16,10 +16,11 @@ model = load_model()
 st.title("Watermark Detection App")
 
 # When the input changes, the cached model will be used
-uploaded_file = st.file_uploader("Choose an image (only accept 224 × 224 pixels)", type=["png"])
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg"])
 
 # Function to preprocess image
 def preprocess_image(image):
+    image = image.resize((224, 224))
     # Convert image to array
     image_array = np.asarray(image)
     # Expand dimensions to match input shape of the model
